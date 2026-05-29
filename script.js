@@ -27,3 +27,9 @@ function operate(numA,operator,numB) { // currently, operator must be a string
 	: alert("Please enter a valid operator")
 	);
 }
+
+
+function clear() {
+	const output = document.querySelector(".output");
+	output.textContent = "";
+}
