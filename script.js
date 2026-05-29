@@ -13,3 +13,7 @@ function multiply(a,b) {
 function divide(a,b) {
 	return a / b;
 }
+
+let numA;
+let operator;
+let numB;
