@@ -17,3 +17,13 @@ function divide(a,b) {
 let numA;
 let operator;
 let numB;
+
+function operate(numA,operator,numB) { // currently, operator must be a string
+	return (
+	(operator === "+") ? add(numA,numB)
+	: (operator === "-") ? subtract(numA,numB)
+	: (operator === "*") ? multiply(numA,numB)
+	: (operator === "/") ? divide(numA,numB)
+	: alert("Please enter a valid operator")
+	);
+}
