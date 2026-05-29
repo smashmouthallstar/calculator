@@ -18,6 +18,8 @@ let numA;
 let operator;
 let numB;
 
+const OUTPUT = document.querySelector(".output");
+
 function operate(numA,operator,numB) { // currently, operator must be a string
 	return (
 	(operator === "+") ? add(numA,numB)
@@ -30,6 +32,5 @@ function operate(numA,operator,numB) { // currently, operator must be a string
 
 
 function clear() {
-	const output = document.querySelector(".output");
 	output.textContent = "";
 }
