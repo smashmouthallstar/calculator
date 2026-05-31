@@ -43,6 +43,13 @@ function isDisplayDemo() { // May not be needed after CSS
 	}
 }
 
+function resetVariables() {
+	numA = "";
+	numB = "";
+	operator = undefined;
+	result = undefined;
+}
+
 DIGIT_BUTTON.forEach(button => { // Assign digit var and append to display
 	button.addEventListener("click", e => {
 		OUTPUT.textContent += e.target.textContent;
