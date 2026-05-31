@@ -24,6 +24,7 @@ const DIGIT_BUTTON = document.querySelectorAll(".calc-input");
 const EQUALS_BUTTON = document.querySelector(".calc-return");
 const CLEAR_BUTTON = document.querySelector(".calc-clear");
 const OPERATOR_BUTTON = document.querySelectorAll(".calc-operator");
+const DECIMAL_BUTTON = document.querySelector(".calc-decimal");
 
 function operate(numA,operator,numB) {
 	numA = +numA;
@@ -89,7 +90,29 @@ OPERATOR_BUTTON.forEach(button => { // Assign operator var and append to display
 	});
 });
 
+DECIMAL_BUTTON.addEventListener("click", e => {
+	if (result || isDisplayDemo()) { // if there's a result when clicking digit, reset everything and set output to none
+		OUTPUT.textContent = "";
+		resetVariables();
+	}
 
+	if (!operator) {
+		if (numA.includes(".")) { // Define numA before operator
+			return;
+		} else {
+			numA += e.target.textContent;
+			OUTPUT.textContent += e.target.textContent;
+		}
+
+	} else {
+		if (numB.includes(".")) {  // Define numB after operator
+			return;
+		} else {
+			numB += e.target.textContent;
+			OUTPUT.textContent += e.target.textContent;
+		}
+	}
+});
 
 CLEAR_BUTTON.addEventListener("click", e => {
 	numA = "";
