@@ -67,7 +67,7 @@ CLEAR_BUTTON.addEventListener("click", e => {
 });
 
 EQUALS_BUTTON.addEventListener("click", e => {
-	if (numB === "0" && operator === "/") {
+	if (numB === "0" && operator === "/" || numB == 0 && operator === "/") {
 			alert("You cannot divide by zero.");
 			return;
 		}
