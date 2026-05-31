@@ -67,6 +67,10 @@ CLEAR_BUTTON.addEventListener("click", e => {
 });
 
 EQUALS_BUTTON.addEventListener("click", e => {
+	if (numB === "0" && operator === "/") {
+			alert("You cannot divide by zero.");
+			return;
+		}
 	OUTPUT.textContent = `${operate(numA,operator,numB)}`
 });
 // TO DO:
