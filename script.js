@@ -78,5 +78,5 @@ EQUALS_BUTTON.addEventListener("click", e => {
 	OUTPUT.textContent = result;
 });
 // TO DO:
-// Equals replaces the current output. On next input, replace the output again (and delete the variables?
-// If operator exists, then set numA + numB to numA + numB, and set numB to undefined again.
+// On next input, replace the output again (and delete the variables?
+// If operator exists, then set numA to result and remove operator after set numB to undefined again and add new operator: 12 + 9 => + => 17+
