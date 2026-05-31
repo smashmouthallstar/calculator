@@ -17,6 +17,7 @@ function divide(a,b) {
 let numA = ""; 
 let operator;
 let numB = "";
+let result;
 
 const OUTPUT = document.querySelector(".output");
 const DIGIT_BUTTON = document.querySelectorAll(".calc-input");
