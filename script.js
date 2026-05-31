@@ -35,6 +35,3 @@ function operate(numA,operator,numB) { // currently, operator must be a string
 }
 
 
-function clear() {
-	output.textContent = "";
-}
