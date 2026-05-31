@@ -1,21 +1,22 @@
-body {
-	height: 100vh;
-	display: flex;
-	margin: 0;
-}
-
 .container {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: center;
-	align-items: center;
-	flex: 1;
+	width: 50vw;
+	height: 50vw;
+	border: solid 5px;
+	padding: 10px;
 }
 
-.container > div.output {
+.container div.output {
+	font-size: 4em;
+	text-align: right;
+	width: 100%;
 	flex: 1 0 100;
+	margin-bottom: 10px;
+	border: solid 2.5px;
 }
 
 .container * {
+	width: 25%;
 	flex: 1 1 auto;
 }
