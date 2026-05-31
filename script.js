@@ -37,6 +37,12 @@ function operate(numA,operator,numB) {
 	);
 }
 
+function isDisplayDemo() {
+	if (OUTPUT.textContent === "1234") {
+		return true;
+	}
+}
+
 DIGIT_BUTTON.forEach(button => { // Assign digit var and append to display
 	button.addEventListener("click", e => {
 		OUTPUT.textContent += e.target.textContent;
