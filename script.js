@@ -71,7 +71,8 @@ EQUALS_BUTTON.addEventListener("click", e => {
 			alert("You cannot divide by zero.");
 			return;
 		}
-	OUTPUT.textContent = `${operate(numA,operator,numB)}`
+	result = operate(numA,operator,numB);
+	OUTPUT.textContent = result;
 });
 // TO DO:
 // Equals replaces the current output. On next input, replace the output again (and delete the variables?
