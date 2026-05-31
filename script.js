@@ -130,5 +130,7 @@ EQUALS_BUTTON.addEventListener("click", e => {
 	if (result === undefined) { // Don't update display if result is invalid
 		return;
 	}
-	OUTPUT.textContent = result;
+	if (String(result).includes(".")) {
+		OUTPUT.textContent = Number.parseFloat(result).toFixed(2); // Truncate to 2 decimal places max
+	} else OUTPUT.textContent = result;
 });
