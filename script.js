@@ -37,8 +37,8 @@ function operate(numA,operator,numB) {
 	);
 }
 
-function isDisplayDemo() {
-	if (OUTPUT.textContent === "1234") {
+function isDisplayDemo() { // May not be needed after CSS
+	if (OUTPUT.textContent === "Your Calculation Here!") {
 		return true;
 	}
 }
