@@ -65,3 +65,10 @@ CLEAR_BUTTON.addEventListener("click", e => {
 	numB = "";
 	OUTPUT.textContent = "";
 });
+
+EQUALS_BUTTON.addEventListener("click", e => {
+	OUTPUT.textContent = `${operate(numA,operator,numB)}`
+});
+// TO DO:
+// Equals replaces the current output. On next input, replace the output again (and delete the variables?
+// If operator exists, then set numA + numB to numA + numB, and set numB to undefined again.
