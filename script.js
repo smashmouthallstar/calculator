@@ -52,7 +52,13 @@ function resetVariables() {
 
 DIGIT_BUTTON.forEach(button => { // Assign digit var and append to display
 	button.addEventListener("click", e => {
+		if (result || isDisplayDemo()) { // if there's a result when clicking digit, reset everything and set output to none
+			OUTPUT.textContent = "";
+			resetVariables();
+		}
+
 		OUTPUT.textContent += e.target.textContent;
+
 		if (!operator) {
 			numA += e.target.textContent; // Define numA before operator
 		} else {
@@ -64,6 +70,13 @@ DIGIT_BUTTON.forEach(button => { // Assign digit var and append to display
 OPERATOR_BUTTON.forEach(button => { // Assign operator var and append to display
 	button.addEventListener("click", e => {
 		if (!operator && numA) { // If numA exists but not operator, update operator
+			OUTPUT.textContent += e.target.textContent;
+			operator = e.target.textContent;
+		} else if (result) {
+			numA = result;
+			numB = "";
+			result = undefined;
+			OUTPUT.textContent = numA;
 			OUTPUT.textContent += e.target.textContent;
 			operator = e.target.textContent;
 		} else if (operator) { // If operator exists: A = A+B, B = "", update operator
@@ -96,5 +109,3 @@ EQUALS_BUTTON.addEventListener("click", e => {
 	}
 	OUTPUT.textContent = result;
 });
-// TO DO:
-// On next input, replace the output again (and delete the variables?
