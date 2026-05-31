@@ -25,6 +25,8 @@ const CLEAR_BUTTON = document.querySelector(".calc-clear");
 const OPERATOR_BUTTON = document.querySelectorAll(".calc-operator");
 
 function operate(numA,operator,numB) {
+	numA = +numA;
+	numB = +numB;
 	return (
 	(operator === "+") ? add(numA,numB)
 	: (operator === "-") ? subtract(numA,numB)
