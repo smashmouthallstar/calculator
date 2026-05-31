@@ -1,0 +1,21 @@
+body {
+	height: 100vh;
+	display: flex;
+	margin: 0;
+}
+
+.container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+}
+
+.container > div.output {
+	flex: 1 0 100;
+}
+
+.container * {
+	flex: 1 1 auto;
+}
