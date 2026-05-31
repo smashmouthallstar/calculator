@@ -34,4 +34,31 @@ function operate(numA,operator,numB) { // currently, operator must be a string
 	);
 }
 
+DIGIT_BUTTON.forEach(button => { // Assign digit var and append to display
+	button.addEventListener("click", e => {
+		OUTPUT.textContent += e.target.textContent;
+		if (!operator) {
+			numA += e.target.textContent; // Define numA before operator
+		} else {
+			numB += e.target.textContent; // Define numB after operator
+		}
+	});
+});
 
+OPERATOR_BUTTON.forEach(button => { // Assign operator var and append to display
+	button.addEventListener("click", e => {
+		if (!operator && numA) {
+			OUTPUT.textContent += e.target.textContent;
+			operator = e.target.textContent;
+		}
+	});
+});
+
+
+
+CLEAR_BUTTON.addEventListener("click", e => {
+	numA = "";
+	operator = undefined;
+	numB = "";
+	OUTPUT.textContent = "";
+});
