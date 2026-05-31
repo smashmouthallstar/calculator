@@ -72,6 +72,9 @@ EQUALS_BUTTON.addEventListener("click", e => {
 			return;
 		}
 	result = operate(numA,operator,numB);
+	if (result === undefined) { // Don't update display if result is invalid
+		return;
+	}
 	OUTPUT.textContent = result;
 });
 // TO DO:
