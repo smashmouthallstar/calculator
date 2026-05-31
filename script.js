@@ -50,7 +50,13 @@ DIGIT_BUTTON.forEach(button => { // Assign digit var and append to display
 
 OPERATOR_BUTTON.forEach(button => { // Assign operator var and append to display
 	button.addEventListener("click", e => {
-		if (!operator && numA) {
+		if (!operator && numA) { // If numA exists but not operator, update operator
+			OUTPUT.textContent += e.target.textContent;
+			operator = e.target.textContent;
+		} else if (operator) { // If operator exists: A = A+B, B = "", update operator
+			numA = operate(numA,operator,numB);
+			numB = "";
+			OUTPUT.textContent = numA;
 			OUTPUT.textContent += e.target.textContent;
 			operator = e.target.textContent;
 		}
@@ -79,4 +85,3 @@ EQUALS_BUTTON.addEventListener("click", e => {
 });
 // TO DO:
 // On next input, replace the output again (and delete the variables?
-// If operator exists, then set numA to result and remove operator after set numB to undefined again and add new operator: 12 + 9 => + => 17+
