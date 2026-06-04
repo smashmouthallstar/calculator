@@ -25,6 +25,7 @@ const EQUALS_BUTTON = document.querySelector(".calc-return");
 const CLEAR_BUTTON = document.querySelector(".calc-clear");
 const OPERATOR_BUTTON = document.querySelectorAll(".calc-operator");
 const DECIMAL_BUTTON = document.querySelector(".calc-decimal");
+const ALL_BUTTONS = document.querySelectorAll("button");
 
 function operate(numA,operator,numB) {
 	numA = +numA;
@@ -133,4 +134,16 @@ EQUALS_BUTTON.addEventListener("click", e => {
 	if (String(result).includes(".")) {
 		OUTPUT.textContent = Number.parseFloat(result).toFixed(2); // Truncate to 2 decimal places max
 	} else OUTPUT.textContent = result;
+});
+
+ALL_BUTTONS.forEach(button => { // Keyboard support
+	document.addEventListener("keydown", e => { // Document event listener provides location agnostic keyboard support
+		if (e.key === button.textContent) button.click();
+		if (e.key === "Enter" && button.textContent === "=") {
+			e.preventDefault(); // Prevent entering a number with enter key
+			button.click();
+		}
+		if (e.key === "Backspace" && button.textContent === "<=") button.click();
+		if (e.key === "Escape" && button.textContent === "Clear") button.click();
+	});
 });
