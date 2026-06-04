@@ -154,7 +154,6 @@ BACK_BUTTON.addEventListener("click", e => {
 		OUTPUT.textContent = "";
 		resetVariables();
 	}
-
 	if (!operator && numA) {
 		// Delete one digit from numA
 		numA = String(numA).slice(0, -1);
