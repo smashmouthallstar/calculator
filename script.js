@@ -25,6 +25,7 @@ const EQUALS_BUTTON = document.querySelector(".calc-return");
 const CLEAR_BUTTON = document.querySelector(".calc-clear");
 const OPERATOR_BUTTON = document.querySelectorAll(".calc-operator");
 const DECIMAL_BUTTON = document.querySelector(".calc-decimal");
+const BACK_BUTTON = document.querySelector(".calc-back");
 const ALL_BUTTONS = document.querySelectorAll("button");
 
 function operate(numA,operator,numB) {
@@ -146,4 +147,25 @@ ALL_BUTTONS.forEach(button => { // Keyboard support
 		if (e.key === "Backspace" && button.textContent === "<=") button.click();
 		if (e.key === "Escape" && button.textContent === "Clear") button.click();
 	});
+});
+
+BACK_BUTTON.addEventListener("click", e => {
+	if (result || isDisplayDemo()) { // if there's a result when clicking digit, reset everything and set output to none
+		OUTPUT.textContent = "";
+		resetVariables();
+	}
+
+	if (!operator && numA) {
+		// Delete one digit from numA
+		numA = numA.slice(0, -1);
+		OUTPUT.textContent = numA;
+	} else if (operator && numB) {
+		// Delete one value from numB
+		numB = numB.slice(0, -1);
+		OUTPUT.textContent = `${numA} ${operator} ${numB}`;
+	} else if (numA && operator && !numB) {
+		// Delete the operator
+		operator = undefined;
+		OUTPUT.textContent = numA;
+	}
 });
