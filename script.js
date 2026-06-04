@@ -82,7 +82,7 @@ OPERATOR_BUTTON.forEach(button => { // Assign operator var and append to display
 			OUTPUT.textContent = numA;
 			OUTPUT.textContent += e.target.textContent;
 			operator = e.target.textContent;
-		} else if (operator) { // If operator exists: A = A+B, B = "", update operator
+		} else if (operator && numB) { // If operator and numB exists, numA gets result value and numB is reinitialized
 			numA = operate(numA,operator,numB);
 			numB = "";
 			OUTPUT.textContent = numA;
