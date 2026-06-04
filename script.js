@@ -99,7 +99,7 @@ DECIMAL_BUTTON.addEventListener("click", e => {
 	}
 
 	if (!operator) {
-		if (numA.includes(".")) { // Define numA before operator
+		if (numA.includes(".")) { // Do nothing if numA includes decimal already
 			return;
 		} else {
 			numA += e.target.textContent;
@@ -107,7 +107,7 @@ DECIMAL_BUTTON.addEventListener("click", e => {
 		}
 
 	} else {
-		if (numB.includes(".")) {  // Define numB after operator
+		if (numB.includes(".")) {  // Do nothing if numB includes decimal already
 			return;
 		} else {
 			numB += e.target.textContent;
